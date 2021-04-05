@@ -1,0 +1,11 @@
+builds:
+- goos:
+  - linux
+  - windows
+  - darwin
+  goarch:
+  - amd64
+  - arm64
+  - "386"
+
+# vim: set et ts=2 sw=2:
