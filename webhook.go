@@ -1,19 +1,19 @@
 package main
 
 import (
-	"log"
-	"io"
-	"errors"
 	"bytes"
 	"encoding/json"
+	"errors"
+	"io"
+	"log"
 	"net/http"
 )
 
 type DiscordPayload struct {
-	Username *string `json:"username"`
-	AvatarURL *string `json:"avatar_url"`
-	Content *string `json:"content"`
-	Embeds []DiscordPayloadEmbed `json:"embeds"`
+	Username  *string               `json:"username"`
+	AvatarURL *string               `json:"avatar_url"`
+	Content   *string               `json:"content"`
+	Embeds    []DiscordPayloadEmbed `json:"embeds"`
 }
 
 type DiscordPayloadEmbed struct {
@@ -28,11 +28,11 @@ var ErrBadResponseStatus = errors.New("bad response status code")
 
 func PostEmbed(config ConfigWebhook, url string) error {
 	blob, err := json.Marshal(DiscordPayload{
-		Username: &config.Username,
+		Username:  &config.Username,
 		AvatarURL: &config.AvatarURL,
 		Embeds: []DiscordPayloadEmbed{
 			DiscordPayloadEmbed{
-				Image: &DiscordPayloadEmbedImage {
+				Image: &DiscordPayloadEmbedImage{
 					Url: &url,
 				},
 			},
@@ -51,9 +51,9 @@ func PostEmbed(config ConfigWebhook, url string) error {
 
 func PostContent(config ConfigWebhook, url string) error {
 	blob, err := json.Marshal(DiscordPayload{
-		Username: &config.Username,
+		Username:  &config.Username,
 		AvatarURL: &config.AvatarURL,
-		Content: &url,
+		Content:   &url,
 	})
 	if err != nil {
 		return err

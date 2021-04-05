@@ -41,6 +41,11 @@ webhook:
   avatar_url: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0b/Wooden_Pickaxe_JE2_BE2.png"
   # Optional bot username
   username: "Minecraft Screenshots"
+
+# Resize configuration
+resize:
+  enabled: no
+  quality: 95
 ```
 
 <!-- vim: set conceallevel=2 et ts=2 sw=2: -->

@@ -25,7 +25,7 @@ func main() {
 		if !more {
 			break
 		}
-		path, err := Resize(config.Source, config.Target, name)
+		path, err := Resize(config.Resize, config.Source, config.Target, name)
 		if err != nil {
 			log.Printf("Error: %v", err)
 			continue

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/url"
 	"context"
 	"log"
 	"mime"
+	"net/url"
 	"path/filepath"
 
 	"github.com/minio/minio-go/v7"
