@@ -20,6 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	log.Printf("Watching %s for new files...", config.Source)
 	for {
 		name, more := <-w
 		if !more {
@@ -30,6 +31,7 @@ func main() {
 			log.Printf("Error: %v", err)
 			continue
 		}
+		log.Printf("Uploading %s...", path)
 		url, err := s.Upload(path)
 		if err != nil {
 			log.Printf("Error: %v", err)
